@@ -46,7 +46,7 @@ squid/
   covenant/    # annotations, repairs, redactions, audited private access
   cli.py
 prompts/       # versioned prompt templates + CHANGELOG.md
-dev/fixture/   # synthetic fixture entity and its fake birth kit
+dev/fixture/   # synthetic fixture entity and its fake kit
 tests/
   retrieval/   # retrieval test cases against the fixture entity
 docs/

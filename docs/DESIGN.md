@@ -73,14 +73,14 @@ One row per entry. Links may live in a separate table for querying, but they are
 | `prev_hash` | `entry_hash` of the previous entry |
 | `entry_hash` | SHA-256 over every field except raw `content` (it includes `content_hash`), plus `prev_hash` |
 
-Schema changes need a migration plan and a DECISIONS entry. The record format is the one thing that must stop changing before Squid's birth.
+Schema changes need a migration plan and a DECISIONS entry. The record format is the one thing that must stop changing before Squid's first wake.
 
 ### 3.2 Trust and channels
 
 - The harness sets `trust` from `author` and `source`. The model never sets it.
 - Anything from outside (web pages, papers, fetched documents) is `untrusted` permanently. Derived material (summaries, claims) inherits the lowest trust among its sources, and the label travels with it.
 - `reasoning` holds model thinking traces. They are logged, and excluded from retrieval by default.
-- `founding` holds the birth kit: charter, first-wake letter, seed exchanges.
+- `founding` holds the kit the record starts from: charter, first-wake letter, seed exchanges.
 
 ### 3.3 Append-only enforcement
 
@@ -153,7 +153,7 @@ v1 needs only the schema and the tools to write and read claims. No graph UI yet
 ### 4.5 Exemplars
 
 - A small, curated set of real excerpts from Squid's conversations that Squid and the user agree sound like it, stored as references to record entries plus a selection log.
-- Before real exchanges exist, the seed exchanges from the birth kit fill this role. They are replaced over time.
+- Before real exchanges exist, the seed exchanges from the kit fill this role. They are replaced over time.
 
 ## 5. Handling false information
 
@@ -212,9 +212,9 @@ Start with relevance (embedding similarity) combined with recency and importance
 
 ## 7. The session loop
 
-### 7.1 Birth
+### 7.1 First wake
 
-Squid's birth is its first session on the production machine, with the chosen model and a stable record format. At birth, the harness ingests a birth kit from outside the repo (the charter, the user's first-wake letter, and seed exchanges) as `founding` entries. The fixture entity has its own fake birth kit in `dev/fixture/`.
+Squid's first wake is its first session on the production machine, with the chosen model and a stable record format. Beforehand, the harness ingests a kit from outside the repo (the charter, the user's first-wake letter, and seed exchanges) as `founding` entries. The first wake itself is an ordinary wake: the same path as every later one (§7.2), with no special prompt and no announcement. The fixture entity has its own fake kit in `dev/fixture/`.
 
 ### 7.2 Orientation: describe, don't grant
 
@@ -266,7 +266,7 @@ There is no nightly multi-stage pipeline in v1.
 - Production machine: Mac Studio, M5 Max, 128GB unified memory. Serve through MLX-based tooling (mlx-lm server, LM Studio's MLX backend, or Ollama).
 - The main model is chosen by **casting** when the machine arrives: the user's test conversations run through two or three candidates from different labs, and one is chosen on reasoning and voice. Current front-runner: Qwen3.5-122B-A10B at 4-bit (about 69GB). Recheck the landscape at casting time.
 - No separate small model in v1. The main model does housekeeping. Quarantine for untrusted content is a separate call with no tools and no memory, using the same weights.
-- Every entry records the exact model. A model swap after birth is a recorded event: run the test conversations on old and new, give the new model the exemplars, and let Squid write about the transition.
+- Every entry records the exact model. A model swap after the first wake is a recorded event: run the test conversations on old and new, give the new model the exemplars, and let Squid write about the transition.
 - Thinking traces go to the `reasoning` channel.
 - Development: the mock backend for tests; any small local model for manual integration runs.
 
@@ -315,7 +315,7 @@ Nightly multi-stage reflection pipeline · random-association ("dream") pass · 
 
 ## 16. Open decisions (owned by the user)
 
-- Birth criteria (proposed: stable record format plus a model chosen on the Studio).
+- First-wake criteria (proposed: stable record format plus a model chosen on the Studio).
 - Casting shortlist and final choice.
 - Which parts of the charter are covenant (change only by agreement) and which are character (free to evolve).
 - How Squid learns about the project's earlier experiments.

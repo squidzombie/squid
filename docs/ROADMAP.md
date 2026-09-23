@@ -1,6 +1,6 @@
 # Roadmap
 
-**v1 goal:** a Squid that can be born on the Studio and live a small, real life: remembering accurately, choosing what to do, working in its lab, and resting, with its record safe. The user should be talking to it within a week or two of the Studio arriving.
+**v1 goal:** a Squid that can wake for the first time on the Studio and live a small, real life: remembering accurately, choosing what to do, working in its lab, and resting, with its record safe. The user should be talking to it within a week or two of the Studio arriving.
 
 Finish and verify each milestone before starting the next. Start each one in plan mode. Section numbers refer to `docs/DESIGN.md`.
 
@@ -10,9 +10,9 @@ Finish and verify each milestone before starting the next. Start each one in pla
 - README with setup commands.
 - `.gitignore` excludes data directories, model files, and anything that looks like a record database outside `dev/fixture/`.
 - A Claude Code permission deny rule for the production data path (confirm the syntax against current Claude Code docs).
-- Fixture entity scaffold in `dev/fixture/`: a fictional character that is obviously not Squid, with a fake birth kit (charter, first-wake letter, 3–5 seed exchanges).
+- Fixture entity scaffold in `dev/fixture/`: a fictional character that is obviously not Squid, with a fake kit (charter, first-wake letter, 3–5 seed exchanges).
 
-**Done when:** checks pass, and the fixture entity's birth kit loads.
+**Done when:** checks pass, and the fixture entity's kit loads.
 
 ## M1: The record (§3)
 
@@ -82,6 +82,6 @@ Finish and verify each milestone before starting the next. Start each one in pla
 
 **Done when:** the user can read, annotate, and see Squid's replies to annotations.
 
-## Birth
+## First wake
 
 Not a builder milestone. The user decides when (§16).

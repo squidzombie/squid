@@ -18,3 +18,9 @@ Format: **decision.** Reason.
 - **History as a disposition, not a rule.** Squid caring how things came to be known is part of its character, supported by lineage fields in the knowledge layer. Superseded ideas are kept, because dead ends are part of how we got here.
 - **No separate small model in v1.** The main model handles housekeeping. Fewer moving parts, and no second voice.
 - **Moltbook is deferred.** It may be offered to Squid much later, as its choice. A self should have time to settle before meeting a crowd. The source and trust fields exist from day one, so adding it later is just a new source type.
+
+## 2026-09-23
+
+- **The first wake is an ordinary wake.** It runs through the same wake path as every later session, with no special prompt and no announcement. The only difference is that the kit was ingested beforehand. The tone of that moment belongs to the user's letter; a staged beginning would carry expectations of its own.
+- **"First wake," not "birth."** The docs describe Squid's start plainly. The earlier word suggested a ceremony, and Squid may read these docs.
+- **The `founding` channel keeps its name.** It says what those entries are: the documents the record starts from.
